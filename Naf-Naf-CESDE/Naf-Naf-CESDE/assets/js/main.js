@@ -17,33 +17,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const headerContainer = document.getElementById("header-container")
     const letrasNav = document.querySelectorAll(".letrasNavbar")
-    let distanciaScroll = 0
-    const btnAtras = document.getElementById("btnAtras")
-    const btnAdelante = document.getElementById("btnAdelante")
-    const productGrid = document.querySelector(".product-grid")
+    let distanciaScroll = 0     
+    const btnAtras = document.querySelectorAll(".btnAtras")
+    const btnAdelante = document.querySelectorAll(".btnAdelante")
+    const productGrid1 = document.querySelectorAll(".product-grid")
     const totalProductos = document.querySelectorAll(".product-card").length;
     const productosVisibles = 1;
     let index = 0
 
     function mostrarCara(index) {
+        productGrid1.forEach(productGrid =>{
         productGrid.style.transform = `translateX(-${index * 100}%)`;
-        productGrid.style.transition = "transform 0.5s ease-in-out";
+        productGrid.style.transition = "transform 0.5s ease-in-out";})
     }
 
-
-    btnAdelante.addEventListener("click", () => {
+    btnAdelante.forEach(botonAdelante =>{    
+    botonAdelante.addEventListener("click", () => {
         if (index < totalProductos - productosVisibles) {
             index++;
             mostrarCara(index);
         }
     })
+})
 
-    btnAtras.addEventListener("click", () => {
+    btnAtras.forEach(botonAtras=> {
+    botonAtras.addEventListener("click", () => {
         if (index > 0) {
             index--;
             mostrarCara(index);
         }
     })
+})
 
     window.addEventListener("scroll", () => {
         distanciaScroll = document.documentElement.scrollTop
