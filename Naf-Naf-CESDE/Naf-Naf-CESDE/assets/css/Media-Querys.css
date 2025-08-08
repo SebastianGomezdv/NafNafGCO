@@ -1,0 +1,232 @@
+/*Medidas Responsivas*/
+.product-grid {
+    /* Grid de productos en desktop */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet: */
+@media (max-width: 900px) {
+    .product-grid {
+        /* Grid de productos en tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    .product-grid {
+        /* Grid de productos en móvil */
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        /* Imagen de producto en móvil */
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        /* Header en móvil */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .logo {
+        /* Logo centrado y grande en móvil */
+        width: auto;
+        font-size: 2rem;
+        text-align: left;
+        margin: 10px 0 5px 0;
+        display: block;
+        margin-left: 20%;
+        margin-top: 5px;
+    }
+
+    .side-nav {
+        z-index: 1200;
+    }
+
+    .main-nav {
+        /* Menú principal en móvil */
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        height: auto;
+        margin-bottom: 0px;
+        position: static;
+    }
+
+    .main-nav a {
+        /* Enlaces del menú en móvil */
+        margin: 40px 0;
+        font-size: 1rem;
+        top: 0;
+        right: 0px;
+        text-align: center;
+        width: 100%;
+        word-break: break-word;
+        white-space: nowrap;
+    }
+
+    .header-right {
+        /* Contenedor de iconos a la derecha en móvil */
+        position: absolute;
+        top: 15px;
+        right: 60px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        z-index: 1100;
+    }
+}
+
+@media (max-width: 600px) {
+    .icon-buttonn {
+        /* Icono menú hamburguesa en móvil */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        margin: 0;
+        z-index: 1101;
+    }
+
+    .icon-button {
+        /* Iconos de usuario, carrito, etc. en móvil */
+        position: static;
+        font-size: 1.5rem;
+        margin: 0;
+        z-index: 1100;
+    }
+
+    @media (max-width: 600px) {
+        .imagen-fondo {
+            /* Imagen principal en móvil */
+            height: 220px;
+        }
+
+        .overlay-text {
+            /* Texto sobre imagen en móvil */
+            font-size: 1.2rem;
+            padding: 5px;
+            margin-top: 20%;
+        }
+    }
+
+    .red-text {
+        /* Texto rojo destacado en móvil */
+        font-size: 1.9rem;
+    }
+}
+
+/* Carrusel flechas en móvil */
+@media (max-width: 600px) {
+    .carousel-arrow {
+        /* Flechas del carrusel en móvil */
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        top: 50%;
+        position: absolute;
+        z-index: 100;
+    }
+
+    .prev {
+        /* Flecha izquierda en móvil */
+        left: 5px;
+    }
+
+    .next {
+        /* Flecha derecha en móvil */
+        right: 5px;
+    }
+}
+
+/* Ajuste de precios y textos en móvil */
+@media (max-width: 600px) {
+    .product-card p {
+        /* Texto de producto en móvil */
+        font-size: 1.0rem;
+        margin-bottom: 5px;
+    }
+
+    .price {
+        /* Precio en móvil */
+        font-size: 1.0rem;
+    }
+
+    .original-price,
+    .discount-price {
+        /* Precios en móvil */
+        font-size: 1.5rem;
+    }
+}
+
+/* Footer responsive */
+@media (max-width: 600px) {
+
+    .footer-links,
+    .footer-social {
+        /* Footer en columna en móvil */
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+        font-size: 1.6rem;
+    }
+
+    .footer-bottom {
+        /* Texto legal en footer móvil */
+        font-size: 1.3rem;
+        padding-top: 10px;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .footer-links a,
+    .footer-social span,
+    .footer-social a,
+    .footer-bottom {
+        /* Letras del footer más grandes en móvil */
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .imagen-fondo {
+        /* Imagen principal más alta en móvil */
+        height: 300px;
+    }
+
+    .overlay-text {
+        /* Texto sobre imagen principal en móvil */
+        font-size: 2rem;
+        top: 20%;
+        left: 50%;
+        width: 90vw;
+        text-align: center;
+        padding: 5px;
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+}
+
+.product-card p {
+    /* Texto de producto con salto de línea */
+    word-break: break-word;
+    white-space: normal;
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+    padding: 0 5px;
+    text-align: center;
+    max-width: 100%;
+}

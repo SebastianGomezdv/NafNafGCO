@@ -1,0 +1,1 @@
+todo esta hecho con IA, aprender como funciona dejen la pereza

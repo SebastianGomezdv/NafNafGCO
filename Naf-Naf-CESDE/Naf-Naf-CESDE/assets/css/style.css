@@ -1,0 +1,378 @@
+body {
+    /* Estilos generales del cuerpo de la página */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+header {
+    /* Barra superior de la página */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    /* Contenedor principal del header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    transition: all 0.4s ease;
+}
+
+.logo {
+    /* Logo de la marca */
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.header-right {
+    /* Contenedor de los iconos a la derecha del header */
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+.header-left,
+.header-right {
+    /* Contenedores de los elementos a la izquierda y derecha del header */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    /* Enlaces del menú principal */
+    text-decoration: none;
+    color: #131212;
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    top: 20px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.main-nav a:hover {
+    /* Efecto hover en los enlaces del menú */
+    color: #000000;
+}
+
+.main-nav {
+    /* Contenedor del menú principal */
+    height: 60px;
+}
+
+.nav-discount {
+    /* Estilo para texto de descuento en el menú */
+    color: red;
+}
+
+.icon-button {
+    /* Botón de icono (ejemplo: carrito, usuario) */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.icon-buttonn {
+    /* Botón de icono para el menú hamburguesa */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.imagen-fondo {
+    /* Imagen principal de la página */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+
+.red-text {
+    /* Texto rojo destacado */
+    color: #c70303;
+}
+
+.icon-buttonn {
+    /* Posiciona el icono del menú hamburguesa */
+    position: absolute;
+    top: 25px;
+}
+
+
+.icon-button {
+    /* Ajuste de posición y estilo para iconos en header */
+    position: static;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    margin: 0;
+}
+
+.side-nav,
+.side-cart {
+    /* Paneles laterales de navegación y carrito */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav {
+    /* Panel lateral de navegación */
+    left: 0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.side-cart {
+    /* Panel lateral del carrito */
+    right: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.side-nav a,
+.side-cart .cart-content {
+    /* Enlaces y contenido dentro de los paneles laterales */
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-cart h3 {
+    /* Título del carrito lateral */
+    padding: 8px 8px 8px 32px;
+}
+
+.close-btn {
+    /* Botón para cerrar los paneles laterales */
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.side-cart .close-btn {
+    /* Color del botón cerrar en el carrito */
+    color: #fff;
+}
+
+.overlay {
+    /* Fondo oscuro al abrir paneles laterales */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    
+}
+
+main {
+    /* Contenedor principal del contenido */
+    padding: 40px 20px;
+}
+
+.product-carousel {
+    /* Carrusel de productos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.product-grid {
+    /* Grid de productos */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.product-card img {
+    /* Imagen de cada producto */
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+}
+
+.product-card {
+    /* Tarjeta de producto */
+    text-align: center;
+}
+
+.product-card img {
+    /* Imagen dentro de la tarjeta de producto */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.price {
+    /* Precio del producto */
+    margin-top: 5px;
+}
+
+.original-price {
+    /* Precio original tachado */
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.discount-price {
+    /* Precio con descuento */
+    color: red;
+    font-weight: bold;
+}
+
+.carousel-arrow {
+    /* Flechas del carrusel */
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.prev {
+    /* Flecha izquierda del carrusel */
+    left: -1px;
+}
+
+.next {
+    /* Flecha derecha del carrusel */
+    right: -1px;
+}
+
+.cart-header,
+.cart-footer {
+    /* Encabezado y pie del carrito */
+    padding: 20px 32px;
+}
+
+.cart-header {
+    /* Encabezado del carrito */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item {
+    /* Item dentro del carrito */
+    display: flex;
+    align-items: center;
+    padding: 15px 32px;
+    gap: 15px;
+}
+
+.cart-item img {
+    /* Imagen del producto en el carrito */
+    width: 80px;
+}
+
+.cart-total {
+    /* Total del carrito */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    /* Botón principal (ejemplo: comprar) */
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    padding: 15px;
+    background: #ffffff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.space1 .space2 {
+    width: 50%;
+}
+
+footer {
+    /* Pie de página */
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links,
+.footer-social {
+    /* Enlaces y redes sociales en el footer */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-links a,
+.footer-social span {
+    /* Estilos de los enlaces y textos en el footer */
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.social-icons a {
+    /* Iconos de redes sociales */
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    /* Texto legal y final del footer */
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.7rem;
+    color: #aaa;
+}
