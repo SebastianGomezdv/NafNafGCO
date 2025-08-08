@@ -185,7 +185,7 @@ header {
     color: #fff;
 }
 
-.overlay {
+.overlay { 
     /* Fondo oscuro al abrir paneles laterales */
     height: 100%;
     width: 100%;
@@ -195,8 +195,7 @@ header {
     top: 0;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
-    
-}
+} 
 
 main {
     /* Contenedor principal del contenido */
@@ -216,10 +215,12 @@ main {
 
 .product-grid {
     /* Grid de productos */
-    display: grid;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; 
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1200px;
+    
 }
 
 .product-card img {
@@ -234,6 +235,8 @@ main {
 .product-card {
     /* Tarjeta de producto */
     text-align: center;
+    flex: 0 0 100%;
+    box-sizing: border-box;
 }
 
 .product-card img {
