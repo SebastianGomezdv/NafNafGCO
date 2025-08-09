@@ -17,37 +17,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const headerContainer = document.getElementById("header-container")
     const letrasNav = document.querySelectorAll(".letrasNavbar")
-    let distanciaScroll = 0     
-    const btnAtras = document.querySelectorAll(".btnAtras")
-    const btnAdelante = document.querySelectorAll(".btnAdelante")
-    const productGrid1 = document.querySelectorAll(".product-grid")
-    const totalProductos = document.querySelectorAll(".product-card").length;
-    const productosVisibles = 1;
-    let index = 0
+    let distanciaScroll = 0
 
-    function mostrarCara(index) {
-        productGrid1.forEach(productGrid =>{
+    const carousels = document.querySelectorAll(".product-carousel");
+
+carousels.forEach(carousel => {
+    const btnAtras = carousel.querySelector(".btnAtras");
+    const btnAdelante = carousel.querySelector(".btnAdelante");
+    const productGrid = carousel.querySelector(".product-grid");
+    const totalProductos = productGrid.querySelectorAll(".product-card").length;
+    const productosVisibles = 1;
+    let index = 0;
+
+    function mostrarCara() {
         productGrid.style.transform = `translateX(-${index * 100}%)`;
-        productGrid.style.transition = "transform 0.5s ease-in-out";})
+        productGrid.style.transition = "transform 0.5s ease-in-out";
     }
 
-    btnAdelante.forEach(botonAdelante =>{    
-    botonAdelante.addEventListener("click", () => {
+    btnAdelante.addEventListener("click", () => {
         if (index < totalProductos - productosVisibles) {
             index++;
-            mostrarCara(index);
+            mostrarCara();
         }
-    })
-})
+    });
 
-    btnAtras.forEach(botonAtras=> {
-    botonAtras.addEventListener("click", () => {
+    btnAtras.addEventListener("click", () => {
         if (index > 0) {
             index--;
-            mostrarCara(index);
+            mostrarCara();
         }
-    })
-})
+    });
+});
 
     window.addEventListener("scroll", () => {
         distanciaScroll = document.documentElement.scrollTop
