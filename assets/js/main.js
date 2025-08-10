@@ -114,4 +114,16 @@ carousels.forEach(carousel => {
         closeNav(sideMenu);
         closeNav(cartMenu);
     });
+
+    document.querySelector('.buscar').addEventListener('click', () => {
+  const campo = document.getElementById('campo-buscar');
+  campo.style.display = (campo.style.display === 'none' || campo.style.display === '') 
+    ? 'inline-block' 
+    : 'none';
+  campo.focus();
 });
+    document.getElementById('campo-buscar').addEventListener('blur', function() {
+        this.style.display = 'none';
+    });
+});
+

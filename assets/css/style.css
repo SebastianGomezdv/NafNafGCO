@@ -90,6 +90,12 @@ header {
     cursor: pointer;
 }
 
+#campo-buscar {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .icon-buttonn {
     /* Botón de icono para el menú hamburguesa */
     background: none;
@@ -147,7 +153,6 @@ header {
 .side-nav {
     /* Panel lateral de navegación */
     left: 0;
-    border-right: 1px solid #e0e0e0;
 }
 
 .side-cart {
