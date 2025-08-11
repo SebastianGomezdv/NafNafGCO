@@ -21,32 +21,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const carousels = document.querySelectorAll(".product-carousel");
 
-carousels.forEach(carousel => {
+    carousels.forEach(carousel => {
     const btnAtras = carousel.querySelector(".btnAtras");
     const btnAdelante = carousel.querySelector(".btnAdelante");
     const productGrid = carousel.querySelector(".product-grid");
-    const totalProductos = productGrid.querySelectorAll(".product-card").length;
-    const productosVisibles = 1;
-    let index = 0;
+    const productCards = productGrid.querySelectorAll(".product-card");
+    const totalProductos = productCards.length;
+    const productosVisibles = 4;
+    let pagina = 0;
+    const totalPaginas = Math.ceil(totalProductos / productosVisibles);
+
+    productGrid.style.width = `${(100 / productosVisibles) * totalProductos}%`;
+    productCards.forEach(card => {
+        card.style.width = `${100 / totalProductos}%`;
+    });
 
     function mostrarCara() {
-        productGrid.style.transform = `translateX(-${index * 100}%)`;
-        productGrid.style.transition = "transform 0.5s ease-in-out";
+        const porcentaje = 100 * pagina;
+        productGrid.style.transform = `translateX(-${porcentaje}%)`;
     }
 
     btnAdelante.addEventListener("click", () => {
-        if (index < totalProductos - productosVisibles) {
-            index++;
+        if (pagina < totalPaginas - 1) {
+            pagina++;
             mostrarCara();
         }
     });
 
     btnAtras.addEventListener("click", () => {
-        if (index > 0) {
-            index--;
+        if (pagina > 0) {
+            pagina--;
             mostrarCara();
         }
     });
+
+    mostrarCara();
 });
 
     window.addEventListener("scroll", () => {
@@ -116,13 +125,13 @@ carousels.forEach(carousel => {
     });
 
     document.querySelector('.buscar').addEventListener('click', () => {
-  const campo = document.getElementById('campo-buscar');
-  campo.style.display = (campo.style.display === 'none' || campo.style.display === '') 
-    ? 'inline-block' 
-    : 'none';
-  campo.focus();
-});
-    document.getElementById('campo-buscar').addEventListener('blur', function() {
+        const campo = document.getElementById('campo-buscar');
+        campo.style.display = (campo.style.display === 'none' || campo.style.display === '')
+            ? 'inline-block'
+            : 'none';
+        campo.focus();
+    });
+    document.getElementById('campo-buscar').addEventListener('blur', function () {
         this.style.display = 'none';
     });
 });
