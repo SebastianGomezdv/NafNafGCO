@@ -1,138 +1,144 @@
 // Espera a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', function () {
-    // Botón para abrir el menú lateral
+    // Elementos del DOM
     const menuToggle = document.getElementById('menu-toggle');
-    // Botón para cerrar el menú lateral
     const closeMenu = document.getElementById('close-menu');
-    // Botón para abrir el carrito lateral
     const cartToggle = document.getElementById('cart-toggle');
-    // Botón para cerrar el carrito lateral
     const closeCart = document.getElementById('close-cart');
-    // Menú lateral de navegación
     const sideMenu = document.getElementById('side-menu');
-    // Menú lateral del carrito
     const cartMenu = document.getElementById('cart-menu');
-    // Fondo oscuro al abrir paneles laterales
     const overlay = document.getElementById('overlay');
 
-    const headerContainer = document.getElementById("header-container")
-    const letrasNav = document.querySelectorAll(".letrasNavbar")
-    let distanciaScroll = 0
+    const headerContainer = document.getElementById("header-container");
+    const letrasNav = document.querySelectorAll(".letrasNavbar");
+    let distanciaScroll = 0;
 
     const carousels = document.querySelectorAll(".product-carousel");
 
-    carousels.forEach(carousel => {
-    const btnAtras = carousel.querySelector(".btnAtras");
-    const btnAdelante = carousel.querySelector(".btnAdelante");
-    const productGrid = carousel.querySelector(".product-grid");
-    const productCards = productGrid.querySelectorAll(".product-card");
-    const totalProductos = productCards.length;
-    const productosVisibles = 4;
-    let pagina = 0;
-    const totalPaginas = Math.ceil(totalProductos / productosVisibles);
+    // Detectar si estamos en la página de producto
+    const esPaginaProducto = document.body.classList.contains('pagina-producto');
 
-    productGrid.style.width = `${(100 / productosVisibles) * totalProductos}%`;
-    productCards.forEach(card => {
-        card.style.width = `${100 / totalProductos}%`;
-    });
-
-    function mostrarCara() {
-        const porcentaje = 100 * pagina;
-        productGrid.style.transform = `translateX(-${porcentaje}%)`;
+    // Ajustar margen superior del main según altura del header
+    const mainContent = document.querySelector("main");
+    if (headerContainer && mainContent) {
+        const headerHeight = headerContainer.offsetHeight;
+        mainContent.style.paddingTop = headerHeight + "px";
     }
 
-    btnAdelante.addEventListener("click", () => {
-        if (pagina < totalPaginas - 1) {
-            pagina++;
-            mostrarCara();
-        }
-    });
+    // ----- CARRUSEL -----
+    if (carousels.length > 0) {
+        carousels.forEach(carousel => {
+            const btnAtras = carousel.querySelector(".btnAtras");
+            const btnAdelante = carousel.querySelector(".btnAdelante");
+            const productGrid = carousel.querySelector(".product-grid");
+            const productCards = productGrid.querySelectorAll(".product-card");
+            const totalProductos = productCards.length;
+            const productosVisibles = 4;
+            let pagina = 0;
+            const totalPaginas = Math.ceil(totalProductos / productosVisibles);
 
-    btnAtras.addEventListener("click", () => {
-        if (pagina > 0) {
-            pagina--;
-            mostrarCara();
-        }
-    });
-
-    mostrarCara();
-});
-
-    window.addEventListener("scroll", () => {
-        distanciaScroll = document.documentElement.scrollTop
-
-        if (distanciaScroll > 0) {
-            headerContainer.style.backgroundColor = "white"
-            letrasNav.forEach(element => {
-                element.style.color = "black"
+            productGrid.style.width = `${(100 / productosVisibles) * totalProductos}%`;
+            productCards.forEach(card => {
+                card.style.width = `${100 / totalProductos}%`;
             });
 
+            function mostrarCara() {
+                const porcentaje = 100 * pagina;
+                productGrid.style.transform = `translateX(-${porcentaje}%)`;
+            }
 
-        }
-        if (distanciaScroll == 0) {
-            headerContainer.style.backgroundColor = "transparent"
-            letrasNav.forEach(element => {
-                element.style.color = "white"
-            });
-
-        }
-    })
-
-    document.addEventListener("mousemove", (e) => {
-        const dentro = headerContainer.contains(e.target)
-        if (distanciaScroll == 0) {
-            if (dentro) {
-                headerContainer.style.backgroundColor = "white"
-                letrasNav.forEach(element => {
-                    element.style.color = "black"
-                });
-
-            } else {
-                headerContainer.style.backgroundColor = "transparent"
-                letrasNav.forEach(element => {
-                    element.style.color = "white"
+            if (btnAdelante) {
+                btnAdelante.addEventListener("click", () => {
+                    if (pagina < totalPaginas - 1) {
+                        pagina++;
+                        mostrarCara();
+                    }
                 });
             }
-        }
-    })
 
-    // Función para abrir un panel lateral
+            if (btnAtras) {
+                btnAtras.addEventListener("click", () => {
+                    if (pagina > 0) {
+                        pagina--;
+                        mostrarCara();
+                    }
+                });
+            }
+
+            mostrarCara();
+        });
+    }
+
+    // ----- SCROLL HEADER -----
+    if (!esPaginaProducto && headerContainer && letrasNav.length > 0) {
+        // Solo aplicar efecto de scroll si NO estamos en página de producto
+        window.addEventListener("scroll", () => {
+            distanciaScroll = document.documentElement.scrollTop;
+            if (distanciaScroll > 0) {
+                headerContainer.style.backgroundColor = "white";
+                letrasNav.forEach(element => element.style.color = "black");
+            } else {
+                headerContainer.style.backgroundColor = "transparent";
+                letrasNav.forEach(element => element.style.color = "white");
+            }
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            const dentro = headerContainer.contains(e.target);
+            if (distanciaScroll === 0) {
+                if (dentro) {
+                    headerContainer.style.backgroundColor = "white";
+                    letrasNav.forEach(element => element.style.color = "black");
+                } else {
+                    headerContainer.style.backgroundColor = "transparent";
+                    letrasNav.forEach(element => element.style.color = "white");
+                }
+            }
+        });
+    } else if (esPaginaProducto && headerContainer && letrasNav.length > 0) {
+        // Si estamos en página de producto, siempre header negro con letras blancas
+        headerContainer.style.backgroundColor = "black";
+        letrasNav.forEach(element => element.style.color = "white");
+    }
+
+    // ----- PANEL LATERAL -----
     function openNav(menu) {
-        menu.style.width = '350px';
-        overlay.style.display = 'block';
+        if (menu) {
+            menu.style.width = '350px';
+            if (overlay) overlay.style.display = 'block';
+        }
     }
 
-    // Función para cerrar un panel lateral
     function closeNav(menu) {
-        menu.style.width = '0';
-        overlay.style.display = 'none';
+        if (menu) {
+            menu.style.width = '0';
+            if (overlay) overlay.style.display = 'none';
+        }
     }
 
-    // Abre el menú lateral al hacer clic en el botón
-    menuToggle.addEventListener('click', () => openNav(sideMenu));
-    // Abre el carrito lateral al hacer clic en el botón
-    cartToggle.addEventListener('click', () => openNav(cartMenu));
-
-    // Cierra el menú lateral al hacer clic en el botón cerrar
-    closeMenu.addEventListener('click', () => closeNav(sideMenu));
-    // Cierra el carrito lateral al hacer clic en el botón cerrar
-    closeCart.addEventListener('click', () => closeNav(cartMenu));
-
-    // Cierra ambos paneles al hacer clic en el overlay
-    overlay.addEventListener('click', () => {
+    if (menuToggle) menuToggle.addEventListener('click', () => openNav(sideMenu));
+    if (cartToggle) cartToggle.addEventListener('click', () => openNav(cartMenu));
+    if (closeMenu) closeMenu.addEventListener('click', () => closeNav(sideMenu));
+    if (closeCart) closeCart.addEventListener('click', () => closeNav(cartMenu));
+    if (overlay) overlay.addEventListener('click', () => {
         closeNav(sideMenu);
         closeNav(cartMenu);
     });
 
-    document.querySelector('.buscar').addEventListener('click', () => {
-        const campo = document.getElementById('campo-buscar');
-        campo.style.display = (campo.style.display === 'none' || campo.style.display === '')
-            ? 'inline-block'
-            : 'none';
-        campo.focus();
-    });
-    document.getElementById('campo-buscar').addEventListener('blur', function () {
-        this.style.display = 'none';
-    });
-});
+    // ----- BUSCADOR -----
+    const buscarBtn = document.querySelector('.buscar');
+    const campoBuscar = document.getElementById('campo-buscar');
 
+    if (buscarBtn && campoBuscar) {
+        buscarBtn.addEventListener('click', () => {
+            campoBuscar.style.display = (campoBuscar.style.display === 'none' || campoBuscar.style.display === '')
+                ? 'inline-block'
+                : 'none';
+            campoBuscar.focus();
+        });
+
+        campoBuscar.addEventListener('blur', function () {
+            this.style.display = 'none';
+        });
+    }
+});
