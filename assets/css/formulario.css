@@ -1,0 +1,75 @@
+ body.formulario {
+            font-family: Arial, sans-serif;
+            background-image: url(/assets/media/images/fondo\ formulario.webp);
+            background-size: cover;
+            background-position: absolute;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .container-formulario {
+            opacity: 0.87;
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-formulario:focus-within {
+            opacity: 1;
+        }
+
+        .container-formulario:hover {
+            opacity: 1;
+        }
+
+        h2.titulo-formulario {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select {
+            width: 96%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #51904b;
+        }
+
+        .checkbox-label {
+            white-space: nowrap;
+            display: flex;
+            align-items: start;
+            /* Centra verticalmente checkbox y texto */
+            gap: 2px;
+            /* Espacio entre checkbox y texto */
+            justify-content: flex-start;
+        }
+
+        .checkbox-input {
+            margin: 0;
+            /* Quita márgenes extra del checkbox */
+        }

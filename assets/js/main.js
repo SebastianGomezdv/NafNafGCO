@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (pagina < totalPaginas - 1) {
                         pagina++;
                         mostrarCara();
+                    }else {
+                       pagina =  0
+                       mostrarCara()
                     }
                 });
             }
@@ -66,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (pagina > 0) {
                         pagina--;
                         mostrarCara();
+                    }else {
+                        pagina = totalPaginas -1
+                        mostrarCara()
                     }
                 });
             }
@@ -129,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
         closeNav(sideMenu);
         closeNav(cartMenu);
     });
+
+    seeTheCar.addEventListener('click', () => openNav(cartMenu))
 
     // ----- BUSCADOR -----
     const buscarBtn = document.querySelector('.buscar');
