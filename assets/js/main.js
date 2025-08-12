@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const sideMenu = document.getElementById('side-menu');
     const cartMenu = document.getElementById('cart-menu');
     const overlay = document.getElementById('overlay');
+    // Boton Ver carrito
+    const seeTheCar = document.getElementById("verCarrito");
 
     const headerContainer = document.getElementById("header-container");
     const letrasNav = document.querySelectorAll(".letrasNavbar");
     let distanciaScroll = 0;
 
+
+    // FUNCIONAMIENTO DE DESPLAZAMIENTO DEL CARRUSEL
     const carousels = document.querySelectorAll(".product-carousel");
 
     // Detectar si estamos en la página de producto
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const headerHeight = headerContainer.offsetHeight;
         mainContent.style.paddingTop = headerHeight + "px";
     }
+
 
     // ----- CARRUSEL -----
     if (carousels.length > 0) {
