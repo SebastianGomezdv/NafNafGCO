@@ -22,7 +22,7 @@
       title: 'Registro exitoso',
       text: 'Tu cuenta ha sido creada correctamente.'
     }).then(() => {
-      window.location.href = '/inicioSesion.html';
+      window.location.href = '/html/inicioSesion.html';
     });
   });
 });
