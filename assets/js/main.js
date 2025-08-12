@@ -14,11 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartMenu = document.getElementById('cart-menu');
     // Fondo oscuro al abrir paneles laterales
     const overlay = document.getElementById('overlay');
+    // Boton Ver carrito
+    const seeTheCar = document.getElementById("verCarrito");
 
     const headerContainer = document.getElementById("header-container")
     const letrasNav = document.querySelectorAll(".letrasNavbar")
     let distanciaScroll = 0
 
+
+    // FUNCIONAMIENTO DE DESPLAZAMIENTO DEL CARRUSEL
     const carousels = document.querySelectorAll(".product-carousel");
 
     carousels.forEach(carousel => {
@@ -58,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mostrarCara();
 });
 
+    // CAMBIO DE COLOR DE LA NAVBAR SCROLLEANDO
     window.addEventListener("scroll", () => {
         distanciaScroll = document.documentElement.scrollTop
 
@@ -78,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    // CAMBIO DE COLOR DE LA NAVBAR CON HOVER 
     document.addEventListener("mousemove", (e) => {
         const dentro = headerContainer.contains(e.target)
         if (distanciaScroll == 0) {
@@ -112,7 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.addEventListener('click', () => openNav(sideMenu));
     // Abre el carrito lateral al hacer clic en el botón
     cartToggle.addEventListener('click', () => openNav(cartMenu));
-
+    // Boton Ver carrito
+    seeTheCar.addEventListener('click', () => openNav(cartMenu));
     // Cierra el menú lateral al hacer clic en el botón cerrar
     closeMenu.addEventListener('click', () => closeNav(sideMenu));
     // Cierra el carrito lateral al hacer clic en el botón cerrar
@@ -124,6 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
         closeNav(cartMenu);
     });
 
+
+// FUNCIONAMIENTO DE LUPA DE BUSCAR 
     document.querySelector('.buscar').addEventListener('click', () => {
         const campo = document.getElementById('campo-buscar');
         campo.style.display = (campo.style.display === 'none' || campo.style.display === '')
@@ -135,4 +144,5 @@ document.addEventListener('DOMContentLoaded', function () {
         this.style.display = 'none';
     });
 });
+
 
