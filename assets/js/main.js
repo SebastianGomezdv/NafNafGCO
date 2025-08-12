@@ -14,41 +14,55 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartMenu = document.getElementById('cart-menu');
     // Fondo oscuro al abrir paneles laterales
     const overlay = document.getElementById('overlay');
+    // Boton Ver carrito
+    const seeTheCar = document.getElementById("verCarrito");
 
     const headerContainer = document.getElementById("header-container")
     const letrasNav = document.querySelectorAll(".letrasNavbar")
     let distanciaScroll = 0
 
+
+    // FUNCIONAMIENTO DE DESPLAZAMIENTO DEL CARRUSEL
     const carousels = document.querySelectorAll(".product-carousel");
 
-carousels.forEach(carousel => {
+    carousels.forEach(carousel => {
     const btnAtras = carousel.querySelector(".btnAtras");
     const btnAdelante = carousel.querySelector(".btnAdelante");
     const productGrid = carousel.querySelector(".product-grid");
-    const totalProductos = productGrid.querySelectorAll(".product-card").length;
-    const productosVisibles = 1;
-    let index = 0;
+    const productCards = productGrid.querySelectorAll(".product-card");
+    const totalProductos = productCards.length;
+    const productosVisibles = 4;
+    let pagina = 0;
+    const totalPaginas = Math.ceil(totalProductos / productosVisibles);
+
+    productGrid.style.width = `${(100 / productosVisibles) * totalProductos}%`;
+    productCards.forEach(card => {
+        card.style.width = `${100 / totalProductos}%`;
+    });
 
     function mostrarCara() {
-        productGrid.style.transform = `translateX(-${index * 100}%)`;
-        productGrid.style.transition = "transform 0.5s ease-in-out";
+        const porcentaje = 100 * pagina;
+        productGrid.style.transform = `translateX(-${porcentaje}%)`;
     }
 
     btnAdelante.addEventListener("click", () => {
-        if (index < totalProductos - productosVisibles) {
-            index++;
+        if (pagina < totalPaginas - 1) {
+            pagina++;
             mostrarCara();
         }
     });
 
     btnAtras.addEventListener("click", () => {
-        if (index > 0) {
-            index--;
+        if (pagina > 0) {
+            pagina--;
             mostrarCara();
         }
     });
+
+    mostrarCara();
 });
 
+    // CAMBIO DE COLOR DE LA NAVBAR SCROLLEANDO
     window.addEventListener("scroll", () => {
         distanciaScroll = document.documentElement.scrollTop
 
@@ -69,6 +83,7 @@ carousels.forEach(carousel => {
         }
     })
 
+    // CAMBIO DE COLOR DE LA NAVBAR CON HOVER 
     document.addEventListener("mousemove", (e) => {
         const dentro = headerContainer.contains(e.target)
         if (distanciaScroll == 0) {
@@ -103,7 +118,8 @@ carousels.forEach(carousel => {
     menuToggle.addEventListener('click', () => openNav(sideMenu));
     // Abre el carrito lateral al hacer clic en el botón
     cartToggle.addEventListener('click', () => openNav(cartMenu));
-
+    // Boton Ver carrito
+    seeTheCar.addEventListener('click', () => openNav(cartMenu));
     // Cierra el menú lateral al hacer clic en el botón cerrar
     closeMenu.addEventListener('click', () => closeNav(sideMenu));
     // Cierra el carrito lateral al hacer clic en el botón cerrar
@@ -115,15 +131,18 @@ carousels.forEach(carousel => {
         closeNav(cartMenu);
     });
 
+
+// FUNCIONAMIENTO DE LUPA DE BUSCAR 
     document.querySelector('.buscar').addEventListener('click', () => {
-  const campo = document.getElementById('campo-buscar');
-  campo.style.display = (campo.style.display === 'none' || campo.style.display === '') 
-    ? 'inline-block' 
-    : 'none';
-  campo.focus();
-});
-    document.getElementById('campo-buscar').addEventListener('blur', function() {
+        const campo = document.getElementById('campo-buscar');
+        campo.style.display = (campo.style.display === 'none' || campo.style.display === '')
+            ? 'inline-block'
+            : 'none';
+        campo.focus();
+    });
+    document.getElementById('campo-buscar').addEventListener('blur', function () {
         this.style.display = 'none';
     });
 });
+
 

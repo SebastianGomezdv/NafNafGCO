@@ -23,23 +23,27 @@ header {
     position: fixed;
     width: 100%;
     height: 80px;
-    transition: all 0.4s ease;
-}
-
-.logo {
-    /* Logo de la marca */
-    font-size: 3.0rem;
-    font-weight: bold;
-    margin: 0;
+    transition: all 0.6s ease;
+    color: #ffffff;
 }
 
 .header-right {
     /* Contenedor de los iconos a la derecha del header */
-    display: flex;
     align-items: center;
-    gap: 2px;
     flex-direction: row;
     margin-right: 10px;
+}
+
+.header-left {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-left h1 {
+    display: inline-block;
+    padding: 0;              
+    margin: 0;              
+    line-height: normal; 
 }
 
 .header-left,
@@ -51,14 +55,10 @@ header {
     font-size: 2.0rem;
 }
 
-.iconos {
-    font-size: 2.3rem;
-}
-
 .main-nav a {
     /* Enlaces del menú principal */
     text-decoration: none;
-    color: #131212;
+    color: #ffffff;
     margin: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
@@ -67,41 +67,15 @@ header {
     font-size: 1.3rem;
 }
 
-.main-nav a:hover {
-    /* Efecto hover en los enlaces del menú */
-    color: #000000;
-}
-
 .main-nav {
     /* Contenedor del menú principal */
     height: 60px;
 }
 
-.nav-discount {
-    /* Estilo para texto de descuento en el menú */
-    color: red;
-}
-
-.icon-button {
-    /* Botón de icono (ejemplo: carrito, usuario) */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 #campo-buscar {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.icon-buttonn {
-    /* Botón de icono para el menú hamburguesa */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .imagen-fondo {
@@ -110,20 +84,18 @@ header {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    
 }
 
-.red-text {
-    /* Texto rojo destacado */
-    color: #c70303;
-}
-
-.icon-buttonn {
+.icon-button2 {
     /* Posiciona el icono del menú hamburguesa */
     position: absolute;
     top: 25px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
 }
-
 
 .icon-button {
     /* Ajuste de posición y estilo para iconos en header */
@@ -131,7 +103,7 @@ header {
     font-size: 1.5rem;
     background: none;
     border: none;
-    color: #000;
+    color: #ffffff;
     cursor: pointer;
     margin: 0;
 }
@@ -173,9 +145,10 @@ header {
     transition: 0.3s;
 }
 
-.side-cart h3 {
+.side-cart h2 {
     /* Título del carrito lateral */
     padding: 8px 8px 8px 32px;
+    font-size: 1.7rem;
 }
 
 .close-btn {
@@ -195,7 +168,7 @@ header {
     color: #fff;
 }
 
-.overlay { 
+.overlay {
     /* Fondo oscuro al abrir paneles laterales */
     height: 100%;
     width: 100%;
@@ -205,20 +178,17 @@ header {
     top: 0;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
-} 
-
-main {
-    /* Contenedor principal del contenido */
-    padding: 40px 20px;
 }
 
 .product-carousel {
     /* Carrusel de productos */
     display: flex;
+    max-width: 1650px;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow-x: auto;
+    overflow: hidden;
     width: 100%;
     scrollbar-width: none;
 }
@@ -227,26 +197,34 @@ main {
     /* Grid de productos */
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 100%; 
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    
+    width: 100%;
+    gap: 0px;
+}
+
+.product-card {
+    /* Tarjeta de producto */
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    max-width: 25%;
+    padding: 0 10px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.3rem;
 }
 
 .product-card img {
     /* Imagen de cada producto */
-    width: 100%;
-    height: 450px;
+    width: 50%;
+    height: 500px;
     object-fit: cover;
     margin-bottom: 10px;
     overflow-x: hidden;
 }
 
-.product-card {
-    /* Tarjeta de producto */
-    text-align: center;
-    flex: 0 0 100%;
-    box-sizing: border-box;
+.product-card,
+p,
+span {
+    font-family: 'Courier New', Courier, monospace
 }
 
 .product-card img {
@@ -258,12 +236,12 @@ main {
 .price {
     /* Precio del producto */
     margin-top: 5px;
+    margin-bottom: 50px;
 }
 
 .original-price {
     /* Precio original tachado */
-    text-decoration: line-through;
-    color: #888;
+    color: #000000;
     margin-right: 10px;
 }
 
@@ -277,58 +255,27 @@ main {
     /* Flechas del carrusel */
     position: absolute;
     top: 35%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    background-color: rgb(0, 0, 0);
     color: white;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     font-size: 20px;
     cursor: pointer;
 }
 
-.prev {
+.prev,
+.btnAtras {
     /* Flecha izquierda del carrusel */
     left: -1px;
 }
 
-.next {
+.next,
+.btnAdelante {
     /* Flecha derecha del carrusel */
     right: -1px;
-}
-
-.cart-header,
-.cart-footer {
-    /* Encabezado y pie del carrito */
-    padding: 20px 32px;
-}
-
-.cart-header {
-    /* Encabezado del carrito */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cart-item {
-    /* Item dentro del carrito */
-    display: flex;
-    align-items: center;
-    padding: 15px 32px;
-    gap: 15px;
-}
-
-.cart-item img {
-    /* Imagen del producto en el carrito */
-    width: 80px;
-}
-
-.cart-total {
-    /* Total del carrito */
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
 }
 
 .btn-primary {
@@ -343,10 +290,6 @@ main {
     font-weight: bold;
     cursor: pointer;
     font-size: 1.1rem;
-}
-
-.space1 .space2 {
-    width: 50%;
 }
 
 footer {
@@ -373,19 +316,19 @@ footer {
     /* Estilos de los enlaces y textos en el footer */
     text-decoration: none;
     color: #fff;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .social-icons a {
     /* Iconos de redes sociales */
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .footer-bottom {
     /* Texto legal y final del footer */
     border-top: 1px solid #444;
     padding-top: 20px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #aaa;
 }
