@@ -1,5 +1,6 @@
 // Espera a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', function () {
+    
     // Elementos del DOM
     const menuToggle = document.getElementById('menu-toggle');
     const closeMenu = document.getElementById('close-menu');
@@ -11,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Boton Ver carrito
     const seeTheCar = document.getElementById("verCarrito");
 
+    //Navbar
     const headerContainer = document.getElementById("header-container");
     const letrasNav = document.querySelectorAll(".letrasNavbar");
     let distanciaScroll = 0;
-
 
     // FUNCIONAMIENTO DE DESPLAZAMIENTO DEL CARRUSEL
     const carousels = document.querySelectorAll(".product-carousel");
@@ -58,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         pagina++;
                         mostrarCara();
                     }else {
-                       pagina =  0
-                       mostrarCara()
+                    pagina =  0
+                    mostrarCara()
                     }
                 });
             }
@@ -81,7 +82,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ----- SCROLL HEADER -----
-    if (!esPaginaProducto && headerContainer && letrasNav.length > 0) {
+    if (document.body.id != "inicio") {
+        headerContainer.style.backgroundColor = "white";
+        letrasNav.forEach(element => element.style.color = "black");
+    }
+    if (document.body.id == "inicio" && headerContainer && letrasNav.length > 0) {
         // Solo aplicar efecto de scroll si NO estamos en página de producto
         window.addEventListener("scroll", () => {
             distanciaScroll = document.documentElement.scrollTop;
@@ -106,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+
     } else if (esPaginaProducto && headerContainer && letrasNav.length > 0) {
         // Si estamos en página de producto, siempre header negro con letras blancas
         headerContainer.style.backgroundColor = "black";
