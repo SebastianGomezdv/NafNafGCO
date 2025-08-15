@@ -1,4 +1,4 @@
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const formulario = document.querySelector('.formRegistro');
   if (!formulario) {
     console.error('formRegistro no encontrado');
@@ -27,7 +27,7 @@
   });
 });
 
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const formulario2 = document.querySelector('.formLogin');
   if (!formulario2) {
     console.error('formLogin no encontrado');
