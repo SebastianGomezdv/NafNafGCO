@@ -1,7 +1,7 @@
 body {
             background-image: url(/assets/media/images/inicioSesion.webp);
             background-size: cover;
-            background-position: absolute;
+            background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
         }
@@ -71,13 +71,14 @@ body {
             font-size: 1.3rem;
         }
         .login-btn:hover {
-            background: #51904b;
+            background: #fdeb99;
+            color: black;
         }
         .register-link {
             display: block;
             text-align: center;
             margin-top: 1rem;
-            color: #51904b;
+            color: black;
             text-decoration: none;
             font-size: 1.1rem;
         }
