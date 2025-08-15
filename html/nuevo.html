@@ -1,175 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naf Naf | Nuevo</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/Media-Querys.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="https://www.google.com/s2/favicons?domain=nafnaf.com.co&sz=64">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAF NAF Tienda de Ropa Online | Tendencias en Moda Femenina</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/Media-Querys.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://www.google.com/s2/favicons?domain=nafnaf.com.co&sz=64"
+    />
+  </head>
 
+  <body class="pagina-producto">
     <header>
-        <div id="header-container" class="header-container">
-            <a href="/index.html" class="header-left">
-                <h1 class="letrasNavbar">NAF NAF</h1>
-            </a>
-            <nav id="main-nav" class="main-nav">
-                <a class="letrasNavbar" href="nuevo.html">Nuevo</a>
-                <a class="letrasNavbar" href="ropa.html">Ropa</a>
-                <a class="letrasNavbar" href="basicos.html">Básicos</a>
-                <a href="/index.html" class="nav-discount letrasNavbar">Descuentos</a>
-                <button id="menu-toggle" class="icon-button2 letrasNavbar"><i class="fas fa-bars"></i></button>
-            </nav>
-            <div class="header-right">
-                <button class="icon-button letrasNavbar buscar"><i class="fas fa-search"></i></button>
-                <input type="text" id="campo-buscar" placeholder="Buscar..." style="display: none;">
-                <a href="/html/inicioSesion.html" target="_blank" class="icon-button letrasNavbar"><i
-                        class="fas fa-user"></i></a>
-                <button id="cart-toggle" class="icon-button letrasNavbar"><i class="fas fa-shopping-cart"></i></button>
-            </div>
+      <div id="header-container" class="header-container">
+        <a href="/index.html" class="header-left">
+          <h1 class="letrasNavbar">NAF NAF</h1>
+        </a>
+        <nav id="main-nav" class="main-nav">
+          <a class="letrasNavbar" href="/html/nuevo.html">Nuevo</a>
+          <a class="letrasNavbar" href="/html/ropa.html">Ropa</a>
+          <a class="letrasNavbar" href="/html/basicos.html">Básicos</a>
+          <a href="/index.html" class="nav-discount letrasNavbar">Descuentos</a>
+          <button id="menu-toggle" class="icon-button2 letrasNavbar">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+        <div class="header-right">
+          <button class="icon-button letrasNavbar buscar">
+            <i class="fas fa-search"></i>
+          </button>
+          <input
+            type="text"
+            id="campo-buscar"
+            placeholder="Buscar..."
+            style="display: none"
+          />
+          <a
+            href="/html/inicioSesion.html"
+            target="_blank"
+            class="icon-button letrasNavbar"
+            ><i class="fas fa-user"></i
+          ></a>
+          <button id="cart-toggle" class="icon-button letrasNavbar">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
         </div>
+      </div>
     </header>
 
+    <div id="side-menu" class="side-nav">
+      <button id="close-menu" class="close-btn">×</button>
+      <a href="#">Denim</a>
+      <a href="#">Accesorios</a>
+      <a href="#">Colecciones</a>
+      <a href="#">Afiliación</a>
+      <a href="#">Tiendas físicas</a>
+      <a href="#">Soporte</a>
+    </div>
+
     <main>
-            <h1
-                style="text-align: center; font-size: 2.3rem; color: gray; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding: 10px;">
-                DESCUBRE LO NUEVO PARA TI
-            </h1>
-    <section class="product-grid">
-        <div class="product-card">
-                <img src="/assets/media/images/producto1.webp" alt="Producto nuevo 1">
-                <p>Camiseta manga corta tradicional</p>
-                <div class="price">
-                    <span class="original-price">$ 149.900</span>
-                </div>
-        </div>
-        <div class="product-card">
-                <img src="/assets/media/images/producto2.webp" alt="Producto nuevo 2">
-                <p>Chaqueta tipo Trucker en denim</p>
-                <div class="price">
-                    <span class="original-price">$ 299.900</span>
-                </div>
-        </div>
-        <div class="product-card">
-                    <img src="/assets/media/images/producto3.webp" alt="Camiseta manga sisa con tela acanalada">
-                    <p>Pantalón Wide leg tipo cargo</p>
-                    <div class="price">
-                        <span class="original-price">$ 309.900</span>
-                    </div>
-        </div>
-        <div class="product-card">
-                    <img src="/assets/media/images/producto4.webp" alt="Pantalón Relax tiro alto">
-                    <p>Camisa manga corta con bordados</p>
-                    <div class="price">
-                        <span class="original-price">$ 179.900</span>
-                    </div>
-        </div>      
-    </section>
-    
-    <section class="product-grid">
-        <div class="product-card">
-                    <img src="/assets/media/images/producto5.webp" alt="Enterizo con escote en V">
-                    <p>Vestido largo estampado</p>
-                    <div class="price">
-                        <span class="original-price">$ 299.900</span>
-                    </div>
-        </div>
+      <h1
+        style="
+          text-align: center;
+          font-size: 2.3rem;
+          color: gray;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          padding: 10px;
+        "
+      >
+        DESCUBRE LO NUEVO PARA TI
+      </h1>
 
-        <div class="product-card">
-                    <img src="/assets/media/images/producto6.webp" alt="Enterizo con escote en V">
-                    <p>Vestido largo para eventos casuales</p>
-                    <div class="price">
-                        <span class="original-price">$ 299.900</span>
-                    </div>
+      <section class="product-grid">
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=1'"
+        >
+          <img
+            src="../assets/media/images/producto1.webp"
+            alt="Camiseta manga corta tradicional"
+          />
+          <p>Camiseta manga corta tradicional</p>
+          <div class="price"><span class="original-price">$ 149.900</span></div>
         </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=2'"
+        >
+          <img
+            src="../assets/media/images/producto2.webp"
+            alt="Chaqueta tipo Trucker en denim"
+          />
+          <p>Chaqueta tipo Trucker en denim</p>
+          <div class="price"><span class="original-price">$ 299.900</span></div>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=3'"
+        >
+          <img
+            src="../assets/media/images/producto3.webp"
+            alt="Pantalón Wide leg tipo cargo"
+          />
+          <p>Pantalón Wide leg tipo cargo</p>
+          <div class="price"><span class="original-price">$ 309.900</span></div>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=4'"
+        >
+          <img
+            src="../assets/media/images/producto4.webp"
+            alt="Camisa manga corta con bordados"
+          />
+          <p>Camisa manga corta con bordados</p>
+          <div class="price"><span class="original-price">$ 179.900</span></div>
+        </div>
+      </section>
 
-        <div class="product-card">
-                    <img src="/assets/media/images/producto7.webp" alt="Enterizo con escote en V">
-                    <p>Camisa tejida</p>
-                    <div class="price">
-                        <span class="original-price">$ 219.900</span>
-                    </div>
+      <section class="product-grid">
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=5'"
+        >
+          <img
+            src="../assets/media/images/producto5.webp"
+            alt="Vestido largo estampado"
+          />
+          <p>Vestido largo estampado</p>
+          <div class="price"><span class="original-price">$ 299.900</span></div>
         </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=6'"
+        >
+          <img
+            src="../assets/media/images/producto6.webp"
+            alt="Vestido largo para eventos casuales"
+          />
+          <p>Vestido largo para eventos casuales</p>
+          <div class="price"><span class="original-price">$ 299.900</span></div>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=7'"
+        >
+          <img
+            src="../assets/media/images/producto7.webp"
+            alt="Camisa tejida"
+          />
+          <p>Camisa tejida</p>
+          <div class="price"><span class="original-price">$ 219.900</span></div>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=8'"
+        >
+          <img src="../assets/media/images/producto8.webp" alt="Buzo tejido" />
+          <p>Buzo tejido</p>
+          <div class="price"><span class="original-price">$ 269.900</span></div>
+        </div>
+      </section>
 
-        <div class="product-card">
-                    <img src="/assets/media/images/producto8.webp" alt="Enterizo con escote en V">
-                    <p>Buzo tejido</p>
-                    <div class="price">
-                        <span class="original-price">$ 269.900</span>
-                    </div>
+      <section class="product-grid">
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=21'"
+        >
+          <img src="../assets/media/images/producto9.webp" alt="Blusa blanca" />
+          <p>Blusa blanca</p>
+          <div class="price"><span class="original-price">$ 149.900</span></div>
         </div>
-    </section>
-    <section class="product-grid">
-        <div class="product-card">
-                    <img src="/assets/media/images/producto9.webp" alt="Enterizo con escote en V">
-                    <p>Camisa tejida</p>
-                    <div class="price">
-                        <span class="original-price">$ 149.900</span>
-                    </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=22'"
+        >
+          <img
+            src="../assets/media/images/producto10.webp"
+            alt="Buzo tejido moderno"
+          />
+          <p>Buzo tejido moderno</p>
+          <div class="price"><span class="original-price">$ 239.900</span></div>
         </div>
-        <div class="product-card">
-                    <img src="/assets/media/images/producto10.webp" alt="Enterizo con escote en V">
-                    <p>Buzo tejido</p>
-                    <div class="price">
-                        <span class="original-price">$ 239.900</span>
-                    </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=23'"
+        >
+          <img
+            src="../assets/media/images/producto11.webp"
+            alt="Chaqueta tipo Trucker"
+          />
+          <p>Chaqueta tipo Trucker</p>
+          <div class="price"><span class="original-price">$ 369.900</span></div>
         </div>
-        <div class="product-card">
-                    <img src="/assets/media/images/producto11.webp" alt="Enterizo con escote en V">
-                    <p>Chaqueta tipo Trucker</p>
-                    <div class="price">
-                        <span class="original-price">$ 369.900</span>
-                    </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='../html/producto.html?id=24'"
+        >
+          <img
+            src="../assets/media/images/producto12.webp"
+            alt="Camisa manga larga"
+          />
+          <p>Camisa manga larga</p>
+          <div class="price"><span class="original-price">$ 199.900</span></div>
         </div>
-        <div class="product-card">
-                    <img src="/assets/media/images/producto12.webp" alt="Enterizo con escote en V">
-                    <p>Camisa manga larga</p>
-                    <div class="price">
-                        <span class="original-price">$ 199.900</span>
-                    </div>
-        </div>
-    </section>
-    <div id="cart-menu" class="side-cart">
-            <div class="cart-header">
-                <h2>MI BOLSA</h2>
-                <button id="close-cart" class="close-btn">×</button>
-            </div>
-            <div class="cart-content">
-                <p style="font-size: 3.1rem; color: white; text-align: center;">PRONTO EN DESARROLLO</p>
-            </div>
-        </div>
-        <button id="verCarrito" class="btn-primary">Ver Carrito</button>
+      </section>
 
-        <div id="overlay" class="overlay"></div>
+      <div id="cart-menu" class="side-cart">
+        <div class="cart-header">
+          <h2>MI BOLSA</h2>
+          <button id="close-cart" class="close-btn">×</button>
+        </div>
+        <div class="cart-content">
+          <p style="font-size: 3.1rem; color: white; text-align: center">
+            PRONTO EN DESARROLLO
+          </p>
+        </div>
+      </div>
+      <button id="verCarrito" class="btn-primary">Ver Carrito</button>
+
+      <div id="overlay" class="overlay"></div>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="#">¿NECESITAS AYUDA?</a>
-            <a href="#">TÉRMINOS Y CONDICIONES</a>
-            <a href="#">NUESTRA MARCA</a>
-            <a href="#">TÉRMINOS LEGALES</a>
-            <a href="#">MÉTODOS DE PAGO</a>
+      <div class="footer-links">
+        <a href="#">¿NECESITAS AYUDA?</a>
+        <a href="#">TÉRMINOS Y CONDICIONES</a>
+        <a href="#">NUESTRA MARCA</a>
+        <a href="#">TÉRMINOS LEGALES</a>
+        <a href="#">MÉTODOS DE PAGO</a>
+      </div>
+      <div class="footer-social">
+        <span>¡SÍGUENOS EN NUESTRAS REDES SOCIALES!</span>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
-        <div class="footer-social">
-            <span>¡SÍGUENOS EN NUESTRAS REDES SOCIALES!</span>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Todos los derechos reservados NAF NAF © 2022 | COMODIN S.A.S | NIT 800.069.933-6 | Calle 14 No. 52 A -
-                372 | Medellín - Colombia serviciocliente@nafnaf.com.co</p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Todos los derechos reservados NAF NAF © 2022 | COMODIN S.A.S | NIT
+          800.069.933-6 | Calle 14 No. 52 A - 372 | Medellín - Colombia
+          serviciocliente@nafnaf.com.co
+        </p>
+      </div>
     </footer>
 
-    <script src="/assets/js/main.js"></script>
-</body>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
